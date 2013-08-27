@@ -1,2 +1,111 @@
-twinkle-broadcast-server
-========================
+What the... ?
+---------
+*Twinkle lets you star the current playing song in Spotify with a single click.*
+
+This is great for saving that swanky tune you are listening to without breaking your attention while coding or 
+doing some other focused activity. 
+Twinkle uses the [Spotify Apps API](https://developer.spotify.com/technologies/apps) to star songs and WebSockets 
+to communicate key presses. This makes it platform independent and not depending on the Spotify GUI components.
+
+Twinkle consists three parts:
+
+#### Broadcast server ####
+The broadcast server is a simple WebSocket server that will send all incoming messages to all connected clients.
+
+
+#### Spotify app ####
+The Spotify app is a WebSocket client that runs in the Spotify Web browser container and will star the current 
+playing song when receiving a request message using the Spotify App JavaScript API.
+
+
+#### Client ####
+The client is a simple WebSocket client that will send a star request message and depending on the results, 
+play a success or fail sound.
+
+
+
+Installation
+------------
+### Broadcast server ###
+Clone the *twinkle-broadcast-server* in a preferred folder using the command
+
+    $ git clone https://github.com/erikryverling/twinkle-broadcast-server.git
+
+
+#### Windows ####
+
+If you want to run the broadcast server on boot and hidden (witch you probably want)
+you could create a Scheduled Tasks for the `twinkle-broadcast-server.bat` and run it using the `invisible.vb` 
+script as described in this [Super User entry](http://superuser.com/questions/62525/run-a-completly-hidden-batch-file).
+
+
+### Spotify app ###
+1. First you need to make your Spotify account a developer account.
+Do this by clicking [here](https://developer.spotify.com/technologies/apps/#developer-account).
+2. Create a folder named *Spotify* in your home folder (or *My Documents* on Windows).
+3. Clone the *twinkle-spotify-app* in the newly created Spotify folder using the command
+
+        $ git clone https://github.com/erikryverling/twinkle-spotify-app.git
+
+
+### Client ###
+Clone the *twinkle-client* in a preferred folder using the command
+
+    $ git clone https://github.com/erikryverling/twinkle-client-server.git
+
+
+#### Linux ####
+Assign the `twinke-client.sh` script to a keyboard key using a utility of your choice 
+(such as the [xdotool](http://www.semicomplete.com/projects/xdotool)). 
+If your running Xfce you could use the `xfce4-keyboard-settings` command.
+
+
+#### Windows ####
+Assigning the `twinkle-client.bat` script to a keyboard key is a bit tricky on Windows, but one way is to
+create a shortcut to the bat-file in the *All programs* folder in the Start menu or on the Desktop and then 
+right click on the shortcut and choose *Properties*. Then in the *Shortcut key* field enter a shortcut of 
+your choice. 
+You probably also want to set *Run* to *Minimized* to avoid an annoying terminal window popping up each 
+time you press the shortcut key.
+
+
+
+Usage
+-----
+### Broadcast server ###
+The broadcast server has the following set of options
+
+    twinkle-broadcast-server [--url=<url to web socket server>] [-h|--help]
+
+### Spotify app ###
+To start the Spotify app enter the following command in the Spotify search box
+
+    spotify:app:twinkle
+
+If you want to provide a custom URL you could provide them as arguments like this
+
+    spotify:app:twinkle:<scheme>:<host>:<port>
+
+The app will indicate which URL it's connected to and the connection status.
+
+Spotify will unfortunately not save *'development apps'* between sessions (even if you add it to favorites).
+This means that you have to enter the above command each time you start Spotify.
+
+The Twinkle Spotify app must also have focus (within the Spotify window) otherwise, Spotify will terminate it. 
+You can of course minimize the whole Spotify window or tab to another window after opening the Twinkle app.
+
+
+### Client ###
+The client has the following set of options
+
+    twinkle [--url=<url to web socket server>] [-m|--mute-sound] [-h|--help]
+    
+    
+    
+The future and beyond
+---------------------
+I've tried to designed Twinkle to be modular and extensible. 
+For instance, the broadcast server could easily be replaced with another implementation that works in the same way.  
+You could also easily make your own client by just sending the message `twinkle:star` to the URL that the Spotify app 
+is listening to. Have a look at
+ [the code](https://github.com/erikryverling/twinkle-client/blob/master/twinkle-client/client.py) for details
