@@ -26,6 +26,19 @@ play a success or fail sound.
 
 Installation
 ------------
+
+### Prerequisite ###
+* [Python 2](http://www.python.org/download/releases/2.7)
+* [AutoBahn Python](http://autobahn.ws/python)
+
+#### Windows ####
+A quick and dirty way to install the above dependencies is to download and run the following Windows installers:
+* [python-2.7.5.msi](http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi)
+* [zope.interface-4.0.5.win32-py2.7.exe](https://pypi.python.org/packages/2.7/z/zope.interface/zope.interface-4.0.5.win32-py2.7.exe#md5=0fe8cccbbc244a23bbce79ba133f0405)
+* [Twisted-13.1.0.win32-py2.7.msi](https://www.google.se/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CC0QFjAA&url=http%3A%2F%2Fpypi.python.org%2Fpackages%2F2.7%2FT%2FTwisted%2FTwisted-13.1.0.win32-py2.7.msi&ei=DdYdUoS9CcmD4gTF_4GoAQ&usg=AFQjCNHKf1RJCoQnRzbNOKlZk4Uac22Scg&sig2=MjdyaKvQRJuXakUF1AmpaA&bvm=bv.51156542,d.bGE)
+* [autobahn-0.5.14.win32.exe](https://pypi.python.org/packages/any/a/autobahn/autobahn-0.5.14.win32.exe#md5=5ff8480157999e204247f65c017f5d2f)
+
+
 ### Broadcast server ###
 Clone the *twinkle-broadcast-server* in a preferred folder using the command
 
