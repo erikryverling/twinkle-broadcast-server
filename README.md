@@ -26,10 +26,10 @@ play a success or fail sound.
 
 Installation
 ------------
-
 ### Prerequisite ###
 * [Python 2](http://www.python.org/download/releases/2.7)
 * [AutoBahn Python](http://autobahn.ws/python)
+
 
 #### Windows ####
 A quick and dirty way to install the above dependencies is to download and run the following Windows installers:
