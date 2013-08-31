@@ -1,5 +1,5 @@
-What the... ?
----------
+What the ...?
+-------------
 *Twinkle lets you star the current playing song in Spotify with a single click.*
 
 This is great for saving that swanky tune you are listening to without breaking your attention while coding or 
@@ -30,7 +30,6 @@ Installation
 * [Python 2](http://www.python.org/download/releases/2.7)
 * [AutoBahn Python](http://autobahn.ws/python)
 
-
 #### Windows ####
 A quick and dirty way to install the above dependencies is to download and run the following Windows installers:
 * [python-2.7.5.msi](http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi)
@@ -43,6 +42,17 @@ A quick and dirty way to install the above dependencies is to download and run t
 Clone the *twinkle-broadcast-server* in a preferred folder using the command
 
     $ git clone https://github.com/erikryverling/twinkle-broadcast-server.git
+
+
+#### Arch Linux ####
+On Arch you could just install the [ery-twinkle-broadcast-server-git](https://aur.archlinux.org/packages/ery-twinkle-broadcast-server-git) AUR package.
+Using [aurget](https://aur.archlinux.org/packages/aurget/), it's as easy as
+    
+    $ aurget -S ery-twinkle-broadcast-server-git
+
+The broadcast server is installed as a [systemd](https://wiki.archlinux.org/index.php/Systemd) service so you could have it start at boot using the command
+
+    $ sudo systemctl enable twinkle-broadcast-server
 
 
 #### Windows ####
@@ -67,8 +77,13 @@ Clone the *twinkle-client* in a preferred folder using the command
     $ git clone https://github.com/erikryverling/twinkle-client-server.git
 
 
-#### Linux ####
-Assign the `twinke-client.sh` script to a keyboard key using a utility of your choice 
+#### Arch Linux ####
+On Arch you could just install the [ery-twinkle-client-git](https://aur.archlinux.org/packages/ery-twinkle-client-git) AUR package.
+Using [aurget](https://aur.archlinux.org/packages/aurget/), it's as easy as
+    
+    $ aurget -S ery-twinkle-client-git
+    
+Then you should assign the `twinkle` command (symlinked to the `twinkle.sh` script) to a keyboard key using a utility of your choice 
 (such as the [xdotool](http://www.semicomplete.com/projects/xdotool)). 
 If your running Xfce you could use the `xfce4-keyboard-settings` command.
 
@@ -89,6 +104,12 @@ Usage
 The broadcast server has the following set of options
 
     twinkle-broadcast-server [--url=<url to web socket server>] [-h|--help]
+
+#### Arch Linux ####
+You could use the normal `systemctl` commands to control the service, such as
+
+    $ sudo systemctl start twinkle-broadcast-server
+    $ sudo systemctl stop twinkle-broadcast-server
 
 ### Spotify app ###
 To start the Spotify app enter the following command in the Spotify search box
