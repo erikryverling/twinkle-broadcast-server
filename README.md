@@ -1,3 +1,5 @@
+![Twinkle white star](http://erik.r.yverling.se/images/external/white-star.png)
+
 What the ...?
 -------------
 *Twinkle lets you star the current playing song in Spotify with a single click.*
