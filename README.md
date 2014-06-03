@@ -1,3 +1,5 @@
+**DEPRICATION WARNING! Due to the latest Spotify UI update, the star feature has been removed. I'll soon update twinkle to support a new way to saving your favourite tunes. Hold tight!**
+
 ![Twinkle white star](http://erik.r.yverling.se/images/external/white-star.png)
 
 What the ...?
@@ -76,7 +78,7 @@ Do this by clicking [here](https://developer.spotify.com/technologies/apps/#deve
 ### Client ###
 Clone the *twinkle-client* in a preferred folder using the command
 
-    $ git clone https://github.com/erikryverling/twinkle-client-server.git
+    $ git clone https://github.com/erikryverling/twinkle-client.git
 
 
 #### Arch Linux ####
