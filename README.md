@@ -1,4 +1,4 @@
-** DEPRECATION WARNING! Spotify does not longer support Spotify Apps and has also changed the way songs are starred. Thus this project is to be considered discontinued and is only here for historical reasons **
+**DEPRECATION WARNING! Spotify does not longer support Spotify Apps and has also changed the way songs are starred. Thus this project is to be considered discontinued and is only here for historical reasons**
 
 ![Twinkle white star](http://erik.r.yverling.se/images/external/white-star.png)
 
